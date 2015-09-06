@@ -17,7 +17,8 @@ public class RequiredRule: Rule {
     }
     
     public func validate(value: String) -> Bool {
-        return !value.isEmpty
+        let trimmed = value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return !trimmed.isEmpty
     }
     
     public func errorMessage() -> String {
